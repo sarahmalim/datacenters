@@ -20,7 +20,7 @@ exclude:
 - LICENSE.md
 
 # Site metadata
-name: "Data Center Optimization Initiative (DCOI)"
+name: "Datacenters.cio.gov"
 description: "Data Center Optimization Initiative (DCOI)"
 baseurl: https://datacenters.cio.gov/
 # Uncomment the following line for localhost development at http://127.0.0.1:4000/datacenters/
@@ -36,22 +36,32 @@ branch: gh-pages
 navigation:
 - text: Home
   url: /
-- text: Policy
-  url: /policy/
-- text: Leadership and Responsibilities
-  url: /responsibilities/
-- text: Transition to Cloud and Data Center Shared Services
-  url: /transition/
-- text: Optimization of Physical Data Centers
-  url: /optimization/
-- text: Metric Target Values
-  url: /metrictarget/
-- text: Reporting
-  url: /reporting/
-- text: Data Center Optimization Transparency
-  url: /transparency/
-- text: Community Support
-  url: /community/
+- text: Resources for Agencies
+  submenu:
+    - text: Inventory Data Submission
+      url:  /inventory-data-submission/
+    - text: DCOI Strategic Plans
+      submenu:
+        - text: Agency Strategic Plans
+          url:  /agency-strategic-plan/
+        - text: JSON Conversion Tool
+          url:  /json-conversion-tool/
+        - text: Agency FITARA Milestones Submission
+          url:  /milestones/
+    - text: Data Center Shared Services
+      url:  /datacenter-shared-services/
+    - text: Contact Information & Community of Practice
+      submenu:
+        - text: Contact Information
+          url:  /contact-info/
+        - text: DCOI Community of Practice
+          url: /community-practice/
+- text: Resources for the Public
+  submenu:
+    - text: View PDF of Memorandum
+      url: https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_19_1.pdf/
+    - text: Implementation & Progress to Date
+      url: /implementation-and-progress/
 
 # sass
 sass:

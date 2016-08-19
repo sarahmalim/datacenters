@@ -1,25 +1,49 @@
 <aside>
   <a class="skip-link visuallyhidden focusable" href="#main">Skip to Main Content</a>
   <nav class="sidebar-nav" role="navigation">
-    <ul>
+    <ul class="main-ul">
       {% for link in site.navigation %}
-        {% assign current = '' %}
-        {% if page.url == link.url %}
-          {% assign current = 'sidebar-nav-active' %}
-        {% endif %}
-        <li class="{{ current }}">
-          <a href="{{ link.url }}">{{ link.text }}</a>
+        <li>
+          {% if link.url %}
+            <a href="{{ link.url }}">{{ link.text }}</a>
+          {% else %}
+            <span class="sidebar-heading" style="color:#153E56">{{ link.text }}</span>
+          {% endif %}
         </li>
+        {% if link.submenu %}
+            <ul class="submenu-one">
+            {% for sublink in link.submenu %}
+                {% assign current = '' %}
+                {% if page.url == sublink.url %}
+                    {% assign current = 'sidebar-nav-active' %}
+                {% endif %}
+
+                <li class="{{ current }}">
+                    {% if sublink.url %}
+                        <a href="{{ sublink.url }}">{{ sublink.text }}</a>
+                    {% else %}
+                        <span class="sidebar-heading" style="font-size:16px;padding:10px; line-height:1.4em;font-weight:normal">{{ sublink.text }}</span>
+                    {% endif %}
+                </li>
+
+                {% if sublink.submenu %}
+                    <ul class="submenu-two">
+                        {% for sublink2 in sublink.submenu %}
+                            {% assign current = '' %}
+                            {% if page.url == sublink2.url %}
+                                {% assign current = 'sidebar-nav-active' %}
+                            {% endif %}
+                            <li class="{{ current }}" style="margin-left:10px">
+                                <a href="{{ sublink2.url }}" style="font-size:15px">{{ sublink2.text }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+            {% endfor %}
+            </ul>
+        {% endif %}
       {% endfor %}
     </ul>
   </nav>
-  <p>
-    <a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues/">Discuss</a>
-  </p>
-  <p>
-    <a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/edit/{{ site.branch }}/{{ page.path }}">Edit this page</a>
-  </p>
-  <p>
-    <a href="{{ site.baseurl }}/ProposedDataCenterOptimizationInitiativeMemo.pdf">View PDF</a>
-  </p>
 </aside>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
+<html lang="en-US">
 <html>
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css">
   <link href="{{ site.baseurl }}/assets/css/google-fonts.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css?{{ site.time | date: "%Y%m%j%H%M%S" }}">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/syntax.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+  <script src="{{ site.baseurl }}/assets/js/redirect.js"></script>
   <!--[if lt IE 9]>
     <script src="{{ site.baseurl }}/assets/js/html5.js"></script>
     <script src="{{ site.baseurl }}/assets/js/respond.min.js"></script>
@@ -35,18 +37,18 @@
     <meta name="description" content="{{ site.description | xml_escape }}">
     <meta property="og:description" content="{{ site.description | xml_escape }}" />
   {% endif %}
-
+  <noscript>Please enable JavaScript</noscript>
 </head>
 <body>
 
-<div class="container">
+<div class="main">
   <div>
     <header role="banner">
-       <div style="float:right;">
+      <!-- <div style="float:right;">
          <a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/issues/" style="color: white;" class="button">Discuss</a> | 
          <a href="https://github.com/{{ site.org_name }}/{{ site.repo_name }}/edit/{{ site.branch }}/{{ page.path }}" class="button" style="color: white;">Edit</a> | 
          <a href="{{ site.baseurl }}/ProposedDataCenterOptimizationInitiativeMemo.pdf" class="button" style="color: white;">View PDF</a>
-       </div>
+       </div>-->
       <h1>
         <a href="https://datacenters.cio.gov/">{{ site.name }}</a>
       </h1>
@@ -62,9 +64,36 @@
     </article>
 
   </div>
+  <!--Footer-->
+  <br clear="all">
+  <footer>
+    <div class="region-footer">
+      <ul class="list-one">
+        <li><a href="/datacenters/">Home</a></li>
+        <li><a href="/datacenters/inventory-data-submission/">Inventory Data Submission</a></li>
+        <li><a href="/datacenters/agency-strategic-plan/">Agency Strategic Plans</a></li>
+      </ul>
+      <ul class="list-two">
+        <li><a href="/datacenters/json-conversion-tool/">JSON Conversion Tool</a></li>
+        <li><a href="/datacenters/milestones/">Agency FITARA Milestones Submission</a></li>
+        <li><a href="/datacenters/ordering-shared-services/">Data Center Shared Services</a></li>
+      </ul>
+      <ul class="list-three">
+        <li><a href="/datacenters/contact-info/">Contact Information</a></li>
+        <li><a href="/datacenters/community-practice/">DCOI Community of Practice</a></li>
+        <li><a href="https://www.whitehouse.gov/sites/default/files/omb/memoranda/2016/m_16_19_1.pdf/" target="_blank">View PDF of Memorandum</a></li>
+      </ul>
+      <ul class="list-four">
+        <li><a href="/datacenters/">Implementation & Progress to Date</a></li>
+        <li><a href="/datacenters/accessibility/">Accessibility</a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
 {% include analytics.html %}
+
+
 
 </body>
 </html>
