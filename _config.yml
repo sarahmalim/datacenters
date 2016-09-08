@@ -42,7 +42,7 @@ navigation:
       url:  /inventory-data-submission/
     - text: DCOI Strategic Plans
       submenu:
-        - text: Agency Strategic Plans
+        - text: Agency Strategic Plans and Agency-Specific Cost Savings Targets
           url:  /agency-strategic-plan/
         - text: JSON Conversion Tool
           url:  /json-conversion-tool/
